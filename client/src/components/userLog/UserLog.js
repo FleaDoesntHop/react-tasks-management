@@ -1,23 +1,37 @@
 import React, {Component} from 'react'
-import Fieldset from './field'
+import LoginForm from './LogForm'
+import FormTabs from './FormTabs'
 
 class UserLog extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      curTab: 'signIn',
+      tabs: ['signIn', 'signUp']
+    }
+  }
+
+  changeTab = child => {
+    switch(child.innerText) {
+      case '登录':
+        return this.setState(prevState => prevState.curTab = 'signIn')
+      case '注册':
+        return this.setState(prevState => prevState.curTab = 'signUp')
+    }
+  }
 
   render () {
+    const {curTab, tabs} = this.state
     return (
-      <form>
-        <Fieldset
-          label="用户名"
-          icon="account_box"
-          styleObj={{margin: '0 auto'}}
-        />
-        <Fieldset
-          label="密码"
-          type="password"
-          icon="lock"
-          style="margin: '0 auto'"
-        />
-      </form>
+      <div className="row log-form-row">
+        <div className="col s8 offset-s2 log-form">
+          <FormTabs
+            tabs={tabs}
+            onClick={this.changeTab}
+          />
+          <LoginForm curTab={curTab}/>
+        </div>
+      </div>
     )
   }
 }

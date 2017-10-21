@@ -1,17 +1,20 @@
 import React from 'react'
 import {Row, Input, Icon} from 'react-materialize'
 
-const Fieldset = ({label, type, icon, styleObj}) => {
+const Fieldset = ({label, type, icon, inputStyle}) => {
 
 
   return (
     <Row>
-      <Input
-        label={label}
-        type={type}
-      >
-        <Icon>{icon}</Icon>
-      </Input>
+      <div>
+        <Input
+          label={label}
+          type={type}
+          style={inputStyle || {width: '100%'}}
+        >
+          <Icon>{icon}</Icon>
+        </Input>
+      </div>
     </Row>
   )
 }
