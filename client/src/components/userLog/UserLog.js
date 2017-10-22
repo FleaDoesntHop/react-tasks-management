@@ -14,9 +14,9 @@ class UserLog extends Component {
   changeTab = child => {
     switch(child.innerText) {
       case '登录':
-        return this.setState(prevState => prevState.curTab = 'signIn')
+        return this.setState({curTab: 'signIn'})
       case '注册':
-        return this.setState(prevState => prevState.curTab = 'signUp')
+        return this.setState({curTab: 'signUp'})
     }
   }
 
