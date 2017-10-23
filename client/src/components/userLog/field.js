@@ -8,19 +8,20 @@ class Fieldset extends React.Component {
     this.handleInputChange = this.handleInputChange.bind(this)
   }
 
-  handleInputChange = (i, e) => {
-    this.setState({value: e})
+  handleInputChange = (proxy, value) => {
+    this.props.onInputChange(value, this.props.propName)
   }
 
   render () {
     const { label, type, icon, inputStyle } = this.props;
+
     return (
       <Row>
         <Input
           label={label}
           type={type}
           style={inputStyle || {width: '100%'}}
-          value={this.props.value}
+          defaultValue={this.props.value}
           onChange={this.handleInputChange}
         >
           <Icon>{icon}</Icon>
