@@ -4,13 +4,13 @@ export const logForms = {
             label: '用户名',
             icon: 'account_box',
             type: 'text',
-            propName: 'name'
+            propName: 'signInName'
         },
         {
             label: '密码',
             icon: 'lock',
             type: 'password',
-            propName: 'pwd'
+            propName: 'signInPwd'
         },
         {
             label: '记住我',
@@ -24,13 +24,13 @@ export const logForms = {
             label: '用户名',
             icon: 'account_box',
             type: 'text',
-            propName: 'name'
+            propName: 'signUpName'
         },
         {
             label: '密码',
             icon: 'lock',
             type: 'password',
-            propName: 'pwd'
+            propName: 'signUpPwd'
         },
         {
             label: '确认密码',
